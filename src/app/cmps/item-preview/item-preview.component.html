@@ -1,0 +1,6 @@
+<div class="item-preview" [routerLink]="['item',item.id]">
+  <p>{{item.name}}</p>
+  <p>{{item.price}}</p>
+  <button (click)="removeItem($event)">Delete</button>
+  <button (click)="editItem($event)">Edit</button>
+</div>
