@@ -11,6 +11,7 @@ import { ItemPreviewComponent } from './cmps/item-preview/item-preview.component
 import { ItemFilterComponent } from './cmps/item-filter/item-filter.component';
 import { AppHeaderComponent } from './cmps/app-header/app-header.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SecretComponent } from './pages/secret/secret.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     ItemEditComponent,
     ItemPreviewComponent,
     ItemFilterComponent,
-    AppHeaderComponent
+    AppHeaderComponent,
+    SecretComponent
   ],
   imports: [
     BrowserModule,

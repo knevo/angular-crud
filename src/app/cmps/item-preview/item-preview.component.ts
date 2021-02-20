@@ -24,6 +24,6 @@ export class ItemPreviewComponent implements OnInit {
 
   onEditItem(ev: MouseEvent | TouchEvent) {
     ev.stopPropagation()
-    this.router.navigate(['edit', this.item.id])
+    this.router.navigate(['item/edit', this.item.id])
   }
 }
