@@ -3,8 +3,12 @@
     <img [src]="item.img || '../../assets/imgs/no-image.jpg'" alt="Item picture">
   </div>
   <div class="info">
-    <h2>{{item.name}} - {{item.price}}$</h2>
+    <h2>{{item.name}} - {{item.price | currency}}</h2>
     <p>{{item.description}}</p>
   </div>
   <button class="cta-btn">Buy</button>
+  <div class="flex">
+    <button class="simple-btn" (click)="onRemoveItem()">Remove</button>
+    <a class="simple-btn" [routerLink]="['/item/edit',item.id]">Edit</a>
+  </div>
 </div>

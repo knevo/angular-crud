@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Item } from 'src/app/models/item';
 import { ItemService } from 'src/app/services/item.service';
 
@@ -11,10 +11,9 @@ import { ItemService } from 'src/app/services/item.service';
 export class ItemDetailsComponent implements OnInit {
   item: Item;
   // subscription: Subscription
-  constructor(private itemService: ItemService, private route: ActivatedRoute) { }
+  constructor(private itemService: ItemService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    console.log('GOT!');
 
     this.item = this.route.snapshot.data.item
 
@@ -25,6 +24,9 @@ export class ItemDetailsComponent implements OnInit {
     // ).subscribe(item => {
     //   this.item = item
     // })
+  }
+  onRemoveItem() {
+    this.itemService.remove(this.item.id).then(() => this.router.navigateByUrl('/'))
   }
   // ngOnDestroy() {
   //   this.subscription.unsubscribe()

@@ -4,10 +4,7 @@
   </div>
   <div class="info">
     <p>{{item.name}}</p>
-    <p>{{item.price}}$</p>
-    <div class="flex">
-      <button class="simple-button" (click)="onRemoveItem($event)">Delete</button>
-      <button class="simple-button" (click)="onEditItem($event)">Edit</button>
-    </div>
+    <p>{{item.price | currency}}</p>
   </div>
+  <button class="simple-btn">Buy</button>
 </div>

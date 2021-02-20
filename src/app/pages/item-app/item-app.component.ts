@@ -14,7 +14,5 @@ export class ItemAppComponent implements OnInit {
     this.items$ = this.itemService.items$
     this.itemService.query()
   }
-  onRemoveItem(itemId: string) {
-    this.itemService.remove(itemId)
-  }
+
 }

@@ -24,7 +24,9 @@ export class ItemService {
 
   private _items$ = new BehaviorSubject(null);
   public items$ = this._items$.asObservable()
+
   private itemInterval = null
+
   public async query() {
     const filterBy = this._filterBy$.getValue()
     const items = await storageService.query(ENTITY, 800) as Item[]
