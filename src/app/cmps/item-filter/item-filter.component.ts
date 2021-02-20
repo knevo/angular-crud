@@ -1,27 +1,28 @@
-import { Component, EventEmitter, OnInit, Output, SimpleChange, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, SimpleChange, SimpleChanges } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ItemService } from 'src/app/services/item.service';
 
 @Component({
   selector: 'item-filter',
   templateUrl: './item-filter.component.html',
-  styleUrls: ['./item-filter.component.scss']
+  styleUrls: ['./item-filter.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemFilterComponent implements OnInit {
+  @Input() filterBy$
+  @Output('onSetFilter') onFilter = new EventEmitter()
 
-  @Output() onFilter = new EventEmitter()
-
-  constructor(private itemService: ItemService) { }
+  constructor() { }
 
   filterBy = { term: '', minPrice: null, maxPrice: null };
   subscription: Subscription
 
   onSetFilter() {
-    this.itemService.setFilter(this.filterBy)
+    this.onFilter.emit(this.filterBy)
   }
 
   ngOnInit(): void {
-    this.subscription = this.itemService.filterBy$.subscribe(filterBy => {
+    this.subscription = this.filterBy$.subscribe(filterBy => {
       this.filterBy = filterBy
     })
   }

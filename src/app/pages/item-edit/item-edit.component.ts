@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Item } from 'src/app/models/item';
 import { ItemService } from 'src/app/services/item.service';
@@ -6,7 +6,8 @@ import { ItemService } from 'src/app/services/item.service';
 @Component({
   selector: 'item-edit',
   templateUrl: './item-edit.component.html',
-  styleUrls: ['./item-edit.component.scss']
+  styleUrls: ['./item-edit.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemEditComponent implements OnInit {
   item: Item;

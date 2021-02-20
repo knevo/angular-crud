@@ -12,6 +12,7 @@ import { ItemFilterComponent } from './cmps/item-filter/item-filter.component';
 import { AppHeaderComponent } from './cmps/app-header/app-header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SecretComponent } from './pages/secret/secret.component';
+import { StopClickPropagationDirective } from './directives/stop-click-propagation.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SecretComponent } from './pages/secret/secret.component';
     ItemPreviewComponent,
     ItemFilterComponent,
     AppHeaderComponent,
-    SecretComponent
+    SecretComponent,
+    StopClickPropagationDirective
   ],
   imports: [
     BrowserModule,

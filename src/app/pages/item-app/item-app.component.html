@@ -1,5 +1,5 @@
 <div class="item-app">
-  <item-filter></item-filter>
+  <item-filter [filterBy$]="filterBy$" (onSetFilter)="onSetFilter($event)"></item-filter>
   <div class="item-list flex wrap">
     <item-preview *ngFor="let item of items$|async" [item]="item" (removeItem)="onRemoveItem($event)"></item-preview>
   </div>
