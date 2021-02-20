@@ -24,12 +24,15 @@ export class ItemService {
 
   private _items$ = new BehaviorSubject(null);
   public items$ = this._items$.asObservable()
-
+  private itemInterval = null
   public async query() {
     const filterBy = this._filterBy$.getValue()
     const items = await storageService.query(ENTITY, 800) as Item[]
     const filteredItems = this._filterItems(items, filterBy).map((item) => ({ ...item, inStock: Math.random() > 0.5 }))
     this._items$.next(filteredItems)
+    if (!this.itemInterval) {
+      this.itemInterval = setInterval(this.query.bind(this), 1000 * 60)
+    }
   }
 
   public setFilter(filterBy = this.initialFilter) {
@@ -69,7 +72,11 @@ export class ItemService {
   public getEmptyItem() {
     return { name: '', desciption: '', price: null }
   }
+  private itemEmiiter() {
+    new Observable((next) => {
 
+    })
+  }
   private _filterItems(items: Item[], filterBy) {
     return items.filter((item) => {
       const term = filterBy.term || ''

@@ -12,7 +12,7 @@ export class AuthService {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve(this._isLoggedIn);
-      }, 11);
+      }, 1000);
     })
   }
 }
