@@ -121,5 +121,29 @@ export class ItemService {
       price: 390,
       inStock: true
     },
+    {
+      id: this._makeId(),
+      name: 'Monopoly Deal Card Game',
+      img: 'https://images-na.ssl-images-amazon.com/images/I/91KOKqHaKpL._AC_SL1500_.jpg',
+      description: 'Get a handy way to play the classic property-trading game! Be the first collect 3 full property sets of different colors, and you’ll win the Monopoly Deal Card Game.',
+      price: 7.99,
+      inStock: true
+    },
+    {
+      id: this._makeId(),
+      name: 'Disposable Dinner Napkins',
+      img: 'https://images-na.ssl-images-amazon.com/images/I/61i636uKalL._AC_SL1500_.jpg',
+      description: 'disposable dinner napkins feel like linen in the hand,give you an elegant touch. And they\'re more convenience than linen napkins that are need to wash.',
+      price: 19.99,
+      inStock: true
+    },
+    {
+      id: this._makeId(),
+      name: 'Baby Yoda',
+      img: 'https://images-na.ssl-images-amazon.com/images/I/31qygu2BJBL._AC_.jpg',
+      description: 'Material: handmade., made of high-quality plush materials, maximum quality you can sense at first touch.\nEXTRA CUDDLY: the adorable figure with green skin, big ears and large eyes.',
+      price: 19.99,
+      inStock: true
+    },
   ]
 }

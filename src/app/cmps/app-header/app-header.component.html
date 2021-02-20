@@ -8,4 +8,7 @@
     <li routerLink="/item/edit" routerLinkActive="active-nav">New Product</li>
     <li routerLink="/secret" routerLinkActive="active-nav">Secret</li>
   </ul>
+  <div class="flex user-info" *ngIf="loggedInUser$|async;let user;">
+    <p>{{user.name}} bought {{user.cart.length}} items</p>
+  </div>
 </nav>

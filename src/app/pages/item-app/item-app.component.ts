@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ItemService } from 'src/app/services/item.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'item-app',
@@ -8,7 +9,7 @@ import { ItemService } from 'src/app/services/item.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemAppComponent implements OnInit {
-  constructor(private itemService: ItemService) { }
+  constructor(private itemService: ItemService, private userService: UserService) { }
 
   items$
   filterBy$
@@ -21,7 +22,7 @@ export class ItemAppComponent implements OnInit {
   onSetFilter(filterBy) {
     this.itemService.setFilter(filterBy)
   }
-  onBuyItem(itemId) {
-    this.itemService.shouldBuyItem(itemId)
+  onBuyItem(item) {
+    this.userService.addToCart(item)
   }
 }

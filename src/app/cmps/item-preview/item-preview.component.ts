@@ -10,12 +10,15 @@ import { Item } from 'src/app/models/item';
 })
 export class ItemPreviewComponent implements OnInit {
   @Input() item: Item;
-  @Output() onBuyItem = new EventEmitter<string>()
+  @Output() onBuyItem = new EventEmitter<Item>()
 
   constructor() { }
 
   ngOnInit(): void {
   }
+  buyItem(item) {
+    console.log(item);
 
+  }
 
 }

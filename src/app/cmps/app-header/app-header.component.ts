@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +9,10 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 })
 export class AppHeaderComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private userService: UserService) { }
+  loggedInUser$
   ngOnInit(): void {
+    this.loggedInUser$ = this.userService.loggedInUser$
   }
 
 }

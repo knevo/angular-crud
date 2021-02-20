@@ -1,6 +1,6 @@
 <div class="item-app">
   <item-filter [filterBy$]="filterBy$" (onSetFilter)="onSetFilter($event)"></item-filter>
-  <div class="item-list flex wrap">
-    <item-preview *ngFor="let item of items$|async" [item]="item" (removeItem)="onRemoveItem($event)"></item-preview>
+  <div class="item-list grid-gallery flex wrap">
+    <item-preview *ngFor="let item of items$|async" [item]="item" (onBuyItem)="onBuyItem($event)"></item-preview>
   </div>
 </div>

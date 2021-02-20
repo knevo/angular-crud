@@ -6,5 +6,5 @@
     <p>{{item.name}}</p>
     <p>{{item.price | currency}}</p>
   </div>
-  <button class="cta-btn" stop-click-propagation (click)="onBuyItem.emit($event)">Buy</button>
+  <button class="cta-btn" (click)="onBuyItem.emit(item)" stop-click-propagation>Buy</button>
 </div>
