@@ -1,4 +1,4 @@
-<div class="item-preview flex column" [routerLink]="['item',item.id]">
+<div class="item-preview flex column" [routerLink]="['item',item.id]" [ngClass]="{'not-in-stock': !item.inStock}">
   <div class="img-container flex auto-center">
     <img [src]="item.img||'../../assets/imgs/no-image.jpg'" alt="">
   </div>

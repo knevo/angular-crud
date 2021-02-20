@@ -5,6 +5,12 @@
   .img-container {
     flex-grow: 1;
   }
+  &.not-in-stock {
+    img {
+      filter: blur(4px);
+    }
+    color: gray;
+  }
   img {
     width: 100px;
   }

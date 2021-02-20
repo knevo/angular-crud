@@ -28,7 +28,7 @@ export class ItemService {
   public async query() {
     const filterBy = this._filterBy$.getValue()
     const items = await storageService.query(ENTITY, 800) as Item[]
-    const filteredItems = this._filterItems(items, filterBy)
+    const filteredItems = this._filterItems(items, filterBy).map((item) => ({ ...item, inStock: Math.random() > 0.5 }))
     this._items$.next(filteredItems)
   }
 

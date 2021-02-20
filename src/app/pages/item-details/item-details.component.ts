@@ -14,8 +14,9 @@ export class ItemDetailsComponent implements OnInit {
   constructor(private itemService: ItemService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    console.log('GOT!');
+
     this.item = this.route.snapshot.data.item
-    // this.route.data.subscribe()
 
     // Before Reslover,
     // Subscribe to route params and merge it with the getById Observable, so each time we get a new params we will also get a new item
