@@ -1,0 +1,9 @@
+.item-app {
+  padding: 20px 14px;
+
+  .item-list {
+    & > *:not(:first-child) {
+      margin-inline-start: 22px;
+    }
+  }
+}

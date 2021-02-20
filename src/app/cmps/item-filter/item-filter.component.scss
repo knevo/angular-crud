@@ -1,0 +1,9 @@
+.item-filter {
+  margin-bottom: 16px;
+  input {
+    margin-inline-start: 6px;
+  }
+  label:not(:first-of-type) {
+    margin-inline-start: 12px;
+  }
+}

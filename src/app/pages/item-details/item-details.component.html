@@ -1,1 +1,10 @@
-<p>item-details works!</p>
+<div class="item-details flex column">
+  <div class="img-container flex column ">
+    <img [src]="item.img || '../../assets/imgs/no-image.jpg'" alt="Item picture">
+  </div>
+  <div class="info">
+    <h2>{{item.name}} - {{item.price}}$</h2>
+    <p>{{item.description}}</p>
+  </div>
+  <button class="cta-btn">Buy</button>
+</div>

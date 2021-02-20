@@ -1,1 +1,6 @@
-<p>item-app works!</p>
+<div class="item-app">
+  <item-filter></item-filter>
+  <div class="item-list flex wrap">
+    <item-preview *ngFor="let item of items$|async" [item]="item" (removeItem)="onRemoveItem($event)"></item-preview>
+  </div>
+</div>

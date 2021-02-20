@@ -10,19 +10,19 @@ import { Item } from 'src/app/models/item';
 })
 export class ItemPreviewComponent implements OnInit {
   @Input() item: Item;
-  @Output() onRemoveItem = new EventEmitter<string>()
+  @Output() removeItem = new EventEmitter<string>()
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  removeItem(ev: MouseEvent | TouchEvent) {
+  onRemoveItem(ev: MouseEvent | TouchEvent) {
     ev.stopPropagation()
-    this.onRemoveItem.emit(this.item.id)
+    this.removeItem.emit(this.item.id)
   }
 
-  editItem(ev: MouseEvent | TouchEvent) {
+  onEditItem(ev: MouseEvent | TouchEvent) {
     ev.stopPropagation()
     this.router.navigate(['edit', this.item.id])
   }

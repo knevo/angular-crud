@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,7 +9,8 @@ import { ItemDetailsComponent } from './pages/item-details/item-details.componen
 import { ItemEditComponent } from './pages/item-edit/item-edit.component';
 import { ItemPreviewComponent } from './cmps/item-preview/item-preview.component';
 import { ItemFilterComponent } from './cmps/item-filter/item-filter.component';
-import { FormsModule } from '@angular/forms';
+import { AppHeaderComponent } from './cmps/app-header/app-header.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { FormsModule } from '@angular/forms';
     ItemDetailsComponent,
     ItemEditComponent,
     ItemPreviewComponent,
-    ItemFilterComponent
+    ItemFilterComponent,
+    AppHeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

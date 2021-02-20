@@ -1,6 +1,13 @@
-<div class="item-preview" [routerLink]="['item',item.id]">
-  <p>{{item.name}}</p>
-  <p>{{item.price}}</p>
-  <button (click)="removeItem($event)">Delete</button>
-  <button (click)="editItem($event)">Edit</button>
+<div class="item-preview flex column" [routerLink]="['item',item.id]">
+  <div class="img-container flex auto-center">
+    <img [src]="item.img||'../../assets/imgs/no-image.jpg'" alt="">
+  </div>
+  <div class="info">
+    <p>{{item.name}}</p>
+    <p>{{item.price}}$</p>
+    <div class="flex">
+      <button class="simple-button" (click)="onRemoveItem($event)">Delete</button>
+      <button class="simple-button" (click)="onEditItem($event)">Edit</button>
+    </div>
+  </div>
 </div>

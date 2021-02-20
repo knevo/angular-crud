@@ -1,1 +1,10 @@
-<p>item-edit works!</p>
+<form class="item-edit flex column simple-form" #form="ngForm" (ngSubmit)="onSaveItem(form.value)">
+  <input type="text" placeholder="Item Name" [ngModel]="item.name" name="name">
+  <textarea type="text" placeholder="Item Description" [ngModel]="item.description" name="description"></textarea>
+  <input type="number" placeholder="Item Price" [ngModel]="item.price" name="price">
+  <label for="inStock">
+    In Stock
+    <input type="checkbox" [ngModel]="item.inStock" name="inStock" id="inStock">
+  </label>
+  <button>Save</button>
+</form>

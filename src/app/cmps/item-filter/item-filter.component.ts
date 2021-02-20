@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, SimpleChange, SimpleChanges } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ItemService } from 'src/app/services/item.service';
 
@@ -25,6 +25,7 @@ export class ItemFilterComponent implements OnInit {
       this.filterBy = filterBy
     })
   }
+
   ngOnDestroy() {
     this.subscription.unsubscribe()
   }

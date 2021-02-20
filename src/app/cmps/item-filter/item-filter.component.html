@@ -1,8 +1,8 @@
-<form (submit)="onSetFilter()">
+<div class="item-filter">
   <label for="">Name</label>
-  <input type="text" name="term" [(ngModel)]="filterBy.term" />
+  <input type="text" [(ngModel)]="filterBy.term" (ngModelChange)="onSetFilter()" />
   <label for="">Minimun Price</label>
-  <input type="number" name="minPrice" [(ngModel)]="filterBy.minPrice" />
+  <input type="number" name="minPrice" [(ngModel)]="filterBy.minPrice" (ngModelChange)="onSetFilter()" />
   <label for="">Maximum Price</label>
-  <input type="number" name="minPrice" [(ngModel)]="filterBy.maxPrice" />
-</form>
+  <input type=" number" name="minPrice" [(ngModel)]="filterBy.maxPrice" (ngModelChange)="onSetFilter()" />
+</div>

@@ -1,0 +1,17 @@
+.item-preview {
+  cursor: pointer;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  .img-container {
+    flex-grow: 1;
+  }
+  img {
+    width: 100px;
+  }
+  .info {
+    padding: 6px 8px;
+  }
+  button:not(:first-of-type) {
+    margin-inline-start: 6px;
+  }
+}

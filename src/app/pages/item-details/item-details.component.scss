@@ -1,0 +1,18 @@
+.item-details {
+  max-width: 500px;
+  padding-top: 22px;
+  margin: 0 auto;
+  .img-container {
+    width: 250px;
+  }
+  img {
+    width: 250px;
+  }
+  .price {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .info {
+    padding: 0 12px;
+  }
+}
